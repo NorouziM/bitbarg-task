@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Iransans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/IRANSansWeb(FaNum).woff') format('woff');
+}
+
 body {
   background-color: #fafafa;
+  font-size: 0.85rem;
+  font-family: 'Iransans', 'Arial' !important;
+}
+.Mui-selected {
+  border-color: #4285f2 !important;
+  background-color: rgba(66, 133, 242, 0.1) !important;
+  color: rgb(66, 133, 242) !important;
 }

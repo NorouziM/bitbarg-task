@@ -2,13 +2,11 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from './Header.module.scss';
-import { Container } from '@mui/system';
-import { Divider } from '@mui/material';
+import { Divider, Stack } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -26,7 +24,7 @@ export default function ButtonAppBar() {
         component={'header'}
         className={styles.customAppbar}
       >
-        <Toolbar>
+        <Toolbar sx={{ padding: '0px !important' }}>
           <IconButton
             size="large"
             edge="start"
@@ -37,11 +35,11 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <div className={styles.toolbar}>
-            <div className={styles.navBar}>
+            <Stack spacing={2} className={styles.navBar} direction="row">
               <Button color="inherit">خانه</Button>
               <Button color="inherit">قیمت لحظه ای</Button>
               <Button color="inherit">کارمزد ها</Button>
-            </div>
+            </Stack>
             <div className={styles.endSection}>
               <Button color="primary" variant="contained">
                 ورود / ثبت نام
