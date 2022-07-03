@@ -1,0 +1,28 @@
+.navBar {
+  background: '#000' !important;
+}
+.customAppbar {
+  background-color: #fafafa;
+  box-shadow: none;
+  color: #000;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.endSection {
+  display: flex;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  align-items: center;
+}

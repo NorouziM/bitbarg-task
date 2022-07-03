@@ -1,0 +1,16 @@
+.livePriceContainer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 500px;
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(https://bitbarg.com/_next/static/media/live-price-bg.f511aa73.png)
+      no-repeat center;
+    background-size: cover;
+  }
+}
