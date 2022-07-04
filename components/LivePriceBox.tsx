@@ -66,7 +66,7 @@ const LivePriceBox = () => {
           direction="row"
           alignItems={'center'}
         >
-          <Typography variant="h5" component="h2" ml={2} fontWeight={'600'}>
+          <Typography variant="h6" component="h2" ml={3} fontWeight={'600'}>
             قیمت لحظه‌ای
           </Typography>
           <Typography
