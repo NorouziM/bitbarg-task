@@ -1,16 +1,20 @@
 import * as React from 'react';
+// next
+import Link from 'next/link';
+import Image from 'next/image';
+// mui
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import styles from './Header.module.scss';
 import { Divider, Stack } from '@mui/material';
-import Link from 'next/link';
-import Image from 'next/image';
+// styles
+import styles from './Header.module.scss';
 
 export default function ButtonAppBar() {
+  const menuItems = ['خانه', 'قیمت لحظه ای', 'کارمزدها', 'پورتفوی'];
   return (
     <Box
       sx={{
@@ -36,15 +40,22 @@ export default function ButtonAppBar() {
           </IconButton>
           <div className={styles.toolbar}>
             <Stack spacing={2} className={styles.navBar} direction="row">
-              <Button color="inherit">خانه</Button>
-              <Button color="inherit">قیمت لحظه ای</Button>
-              <Button color="inherit">کارمزد ها</Button>
+              {menuItems.map((item) => (
+                <Button sx={{ opacity: 0.85 }} color="inherit" key={item}>
+                  {item}
+                </Button>
+              ))}
             </Stack>
             <div className={styles.endSection}>
               <Button color="primary" variant="contained">
                 ورود / ثبت نام
               </Button>
-              <Divider sx={{ mx: 2 }} orientation="vertical" />
+              <Divider
+                sx={{ mx: 1 }}
+                orientation="vertical"
+                variant="middle"
+                flexItem
+              />
               <Link href="/">
                 <Image
                   src={

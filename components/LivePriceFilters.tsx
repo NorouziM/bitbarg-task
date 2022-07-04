@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
+// mui
 import {
   Box,
   FormControl,
-  IconButton,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -11,29 +12,29 @@ import {
   Stack,
   ToggleButtonGroup,
 } from '@mui/material';
-import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import ToggleButton from '@mui/material/ToggleButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+// style
 import styles from './LivePriceBox.module.scss';
 
 interface IProps {
-  handleSearch: any;
   selectedUnit: 'toman' | 'tether';
-  handleChangeUnitChange: any;
+  handleChangeUnitChange: (e: any) => void;
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
+  handleChangeSort: (e: SelectChangeEvent) => void;
+  sort: string;
 }
 
 const LivePriceFilters = ({
-  handleSearch,
   selectedUnit,
   handleChangeUnitChange,
+  setSearchText,
+  handleChangeSort,
+  sort,
 }: IProps) => {
-  const [sort, setSort] = useState('');
   const [isBookmarkFilterOn, setIsBookmarkFilterOn] = useState(false);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setSort(event.target.value as string);
-  };
   return (
     <Stack
       direction="row"
@@ -42,27 +43,18 @@ const LivePriceFilters = ({
       width="100%"
       alignItems={'center'}
     >
-      <form onSubmit={handleSearch}>
-        <FormControl sx={{ width: '44ch' }}>
-          <OutlinedInput
-            placeholder="جستجو"
-            sx={{ height: '50px' }}
-            startAdornment={
-              <InputAdornment position="start">
-                <IconButton
-                  aria-label="search"
-                  onClick={handleSearch}
-                  edge="end"
-                  sx={{ marginRight: '3px' }}
-                  type="submit"
-                >
-                  <SearchIcon />
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-      </form>
+      <FormControl sx={{ width: '58ch' }}>
+        <OutlinedInput
+          placeholder="جستجو"
+          sx={{ height: '50px' }}
+          onChange={(e) => setSearchText(e.target.value)}
+          startAdornment={
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <ToggleButton
         className={styles.priceButton}
         value="bookmarkFilter"
@@ -73,17 +65,17 @@ const LivePriceFilters = ({
         <StarBorderIcon fontSize="small" sx={{ ml: 1 }} />
         نشان شده ها
       </ToggleButton>
-      <Box sx={{ minWidth: 160, height: '50px' }}>
+      <Box sx={{ minWidth: 160, height: '55px' }}>
         <FormControl fullWidth>
           <InputLabel id="live-price-sort-label">ترتیب بر اساس</InputLabel>
           <Select
             id="live-price-sort-select"
             value={sort}
             label="ترتیب بر اساس"
-            onChange={handleChange}
+            onChange={handleChangeSort}
           >
-            <MenuItem value={10}>کمترین قیمت</MenuItem>
-            <MenuItem value={20}>بیشترین قیمت</MenuItem>
+            <MenuItem value={1}>کمترین قیمت</MenuItem>
+            <MenuItem value={2}>بیشترین قیمت</MenuItem>
           </Select>
         </FormControl>
       </Box>

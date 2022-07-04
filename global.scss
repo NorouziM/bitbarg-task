@@ -1,14 +1,38 @@
 @font-face {
-  font-family: 'Iransans';
+  font-family: 'ir-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/IRANSansWeb(FaNum)_Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'ir-sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/IRANSansWeb(FaNum)_Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'ir-sans';
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/IRANSansWeb(FaNum).woff') format('woff');
+}
+@font-face {
+  font-family: 'ir-sans';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/fonts/IRANSansWeb(FaNum)_Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'ir-sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url('/fonts/IRANSansWeb(FaNum)_UltraLight.woff') format('woff');
 }
 
 body {
   background-color: #fafafa;
   font-size: 0.85rem;
-  font-family: 'Iransans', 'Arial' !important;
+  font-family: 'ir-sans', 'Arial' !important;
 }
 .Mui-selected {
   border-color: #4285f2 !important;

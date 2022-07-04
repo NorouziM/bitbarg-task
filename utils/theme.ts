@@ -5,7 +5,7 @@ import { red } from '@mui/material/colors';
 const theme = createTheme({
   direction: 'rtl',
   typography: {
-    fontFamily: 'Iransans',
+    fontFamily: 'ir-sans',
   },
   palette: {
     primary: {

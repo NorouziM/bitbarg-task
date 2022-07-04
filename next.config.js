@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['bitbarg.com'],
+    domains: ['bitbarg.com', 'api.bitbarg.me'],
   },
 };
 
