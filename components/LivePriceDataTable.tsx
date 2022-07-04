@@ -123,7 +123,7 @@ const LivePriceDataTable = ({
                   )}
                 </TableCell>
                 <TableCell align="center">
-                  {CoinNameComponent(row, index)}
+                  {CoinNameComponent(row, index + 1)}
                 </TableCell>
               </TableRow>
             ))}
